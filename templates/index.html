@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tavern Game</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <style>
+        .page {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+        }
+        .page.active {
+            display: block;
+        }
+        #page2 {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Arena!</h1>
+    <div class="page active" id="page1">
+        <button onclick="goToPage('page2')">Next</button>
+    </div>
+
+    <div class="page" id="page2">
+        <!-- Blank black page -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function goToPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
